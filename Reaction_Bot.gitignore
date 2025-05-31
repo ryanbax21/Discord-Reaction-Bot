@@ -1,0 +1,5 @@
+ReactionBot.env
+reactions.db
+__pycache__/
+*.pyc
+.env
