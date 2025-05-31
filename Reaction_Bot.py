@@ -3,13 +3,14 @@ import sqlite3
 import nest_asyncio
 import os
 from collections import Counter
-from dotenv import load_dotenv
-load_dotenv()
+
 # --- Configuration ---
 # IMPORTANT: DO NOT hardcode your bot token here in production.
 # Use environment variables for security.
 # Set an environment variable named 'DISCORD_BOT_TOKEN' with your actual bot token.
-DISCORD_BOT_TOKEN = os.getenv('DISCORD_BOT_TOKEN')
+DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+if not DISCORD_BOT_TOKEN:
+    raise ValueError("DISCORD_BOT_TOKEN environment variable not set.")
 DATABASE_NAME = 'reactions.db'
 
 # Define Discord Intents required for the bot to function.
